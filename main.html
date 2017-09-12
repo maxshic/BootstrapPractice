@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>管理平台</title>
+    <link href="lib/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/css/sb-admin.css" rel="stylesheet">
+    <style type="text/css">
+        body{
+            overflow: hidden;
+        }
+        .frameContainer{
+            width: 100%;
+            position: absolute;
+            right: 0;
+            top: 50px;
+            bottom: 0;
+            /*background-color: red;*/
+        }
+        #myFrame{
+            width: 100%;
+            height: 100%;
+        }
+        @media screen and (min-width: 768px){
+            .frameContainer{
+                width: calc(100% - 225px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">BootStrap实战</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav side-nav">
+                <li><a href="control.html" target="myFrame"><i class="glyphicon glyphicon-th"></i> Dashboard</a></li>
+                <li><a href="songInfo.html" target="myFrame"><i class="glyphicon glyphicon-music"></i> 歌曲信息管理</a></li>
+                <li><a href="songCate.html" target="myFrame"><i class="glyphicon glyphicon-volume-up"></i> 歌曲类别管理</a></li>
+                <li><a href="singerInfo.html" target="myFrame"><i class="glyphicon glyphicon-piggy-bank"></i> 歌手信息管理</a></li>
+                <li><a href="singerCate.html" target="myFrame"><i class="glyphicon glyphicon-volume-up"></i> 歌手类别管理</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right navbar-user">
+
+                <li class="dropdown user-dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> 您好，管理员 <b class="caret"></b> </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
+                        <li><a href="#"><i class="fa fa-envelope"></i> Inbox <span class="badge">7</span></a></li>
+                        <li><a href="#"><i class="fa fa-gear"></i> Settings</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="fa fa-power-off"></i> 注销</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+
+    <!-- /#page-wrapper -->
+    <div class="frameContainer">
+        <iframe id="myFrame" name="myFrame" frameborder="0" src="control.html">
+
+        </iframe>
+    </div>
+
+
+</div><!-- /#wrapper -->
+
+<!-- JavaScript -->
+<script src="lib/js/jquery.min.js"></script>
+<script src="lib/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
