@@ -10,5 +10,6 @@
     <file url="file://$PROJECT_DIR$/lib/js/TweenLite.min.js" charset="GBK" />
     <file url="file://$PROJECT_DIR$/lib/js/demo-1.js" charset="GBK" />
     <file url="file://$PROJECT_DIR$/lib/js/rAF.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/lib/js/zoom.js" charset="GBK" />
   </component>
 </project>

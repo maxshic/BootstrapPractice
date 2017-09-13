@@ -3,11 +3,68 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/global.css"/>
+    <style type="text/css">
+        #tbMain>tr>td{
+            line-height: 100px;
+        }
+        button{
+            outline: none;
+        }
+        img{
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <div>
-        歌手信息
+    <div class="page-header">
+        <h1><i class="glyphicon glyphicon-piggy-bank"></i> 歌手信息</h1>
     </div>
+
+    <div>
+        <button id="btnAddSinger" class="btn btn-primary pull-right">新增歌手</button>
+    </div>
+
+
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <td>序号</td>
+                    <td>头像</td>
+                    <td>姓名</td>
+                    <td>性别</td>
+                    <td>生日</td>
+                    <td>体重</td>
+                    <td>星座</td>
+                    <td>分类</td>
+                    <td>更多</td>
+                </tr>
+            </thead>
+            <tbody id="tbMain">
+                <tr>
+                    <td>1</td>
+                    <td><img src="images/my.jpg" alt="" width="100" height="100" data-action="zoom"/></td>
+                    <td>666</td>
+                    <td>女</td>
+                    <td>1666-06-06</td>
+                    <td>666</td>
+                    <td>水瓶</td>
+                    <td>南极歌手</td>
+                    <td>
+                        <button style="outline: none;" type="button" class="btn btn-info" title="南极歌手" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.Vivamus sagittis lacus vel augue laoreet rutrum faucibus.Vivamus sagittis lacus vel augue laoreet rutrum faucibus.Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                            查看介绍
+                        </button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    <script src="lib/js/jquery.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <script src="lib/js/zoom.js"></script>
+    <script src="js/singerInfo.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/global.css"/>
+    <style type="text/css">
+        .headerImg{
+            width: 150px;
+            height: 150px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            position: relative;
+            padding: 5px;
+        }
+        #singerHeader{
+            position: absolute;
+            width: 138px;
+            height: 138px;
+            top: 5px;
+            bottom: 5px;
+            left: 5px;
+            right: 5px;
+            opacity: 0;
+            filter: alpha(opacity = 0);
+            cursor: pointer;
+            z-index: 333;
+        }
+        #singerHeaderImg{
+            display: block;
+            position: absolute;
+            width: 138px;
+            height: 138px;
+            top: 5px;
+            bottom: 5px;
+            left: 5px;
+            right: 5px;
+            z-index: 222;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="page-header">
+        <h4>上传歌手信息</h4>
+    </div>
+
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-2"></div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-8">
+
+            <div class="center-block headerImg">
+                <img id="singerHeaderImg" src="images/my.jpg" alt=""/>
+                <input id="singerHeader" type="file"/>
+            </div>
+
+            <div class="form-group">
+                <label for="singerName">姓名</label>
+                <input class="form-control" id="singerName" type="text"/>
+            </div>
+            <div class="form-group">
+                <label class="radio-inline">
+                    <input type="radio" name="singerSex" id="singerM" value="男" checked> 男
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="singerSex" id="singerF" value="女"> 女
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="singerBirth">生日</label>
+                <input class="form-control" id="singerBirth" type="date"/>
+            </div>
+            <div class="form-group">
+                <label for="singerHeight">身高</label>
+                <input class="form-control" id="singerHeight" type="text"/>
+            </div>
+            <div class="form-group">
+                <label>星座</label>
+                <select class="form-control" name="singerStar" id="singerStar">
+                    <option value="白羊座">白羊座</option>
+                    <option value="金牛座">金牛座</option>
+                    <option value="双子座">双子座</option>
+                    <option value="巨蟹座">巨蟹座</option>
+                    <option value="狮子座">狮子座</option>
+                    <option value="处女座">处女座</option>
+                    <option value="处女座">天平座</option>
+                    <option value="天蝎座">天蝎座</option>
+                    <option value="射手座">射手座</option>
+                    <option value="摩羯座">摩羯座</option>
+                    <option value="水瓶座">水瓶座</option>
+                    <option value="双鱼座">双鱼座</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>分类</label>
+                <select class="form-control" name="singerCategory" id="singerCategory">
+                </select>
+            </div>
+            <div class="form-group">
+                <label>简介</label>
+                <textarea class="form-control" name="singerRemark" id="singerRemark" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <button id="btnUpload" class="btn btn-primary btn-block" type="button">上传歌手信息</button>
+            </div>
+
+    </div>
+
+    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-2"></div>
+
+
+
+    <script src="lib/js/jquery.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <script src="js/uploadSingerInfo.js"></script>
+</body>
+</html>

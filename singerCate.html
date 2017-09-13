@@ -4,16 +4,8 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="lib/css/bootstrap.min.css"/>
-    <style>
-        body{
-            padding-left: 20px;
-            padding-right: 20px;
-            height: 100%;
-        }
-        a:hover{
-            text-decoration: none;
-        }
-    </style>
+    <link rel="stylesheet" href="css/global.css"/>
+
 </head>
 <body>
 
@@ -23,22 +15,49 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="modal-title">
-                        增加新类别
+                        <h4>增加新类别</h4>
                     </div>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <div class="form-group">
+                        <label for="cateName">新增类别<span id=""></span></label>
+                        <input class="form-control" id="cateName" type="text" placeholder="例如：华语歌手"/>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary">保存</button>
+                    <button id="btnNewCateSave" type="button" class="btn btn-primary">保存</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <div id="dialogEdit" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">
+                        <h4>编辑类别</h4>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="cateName">编辑类别</label>
+                        <input class="form-control" id="cateEditName" type="text"/>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button id="btnEditCateSave" type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <div class="page-header">
-        <h1>歌手类别</h1>
+        <h1><i class="glyphicon glyphicon-volume-up"></i> 歌手类别</h1>
     </div>
     <div class="table-responsive">
         <div>
@@ -57,46 +76,6 @@
                 <tr>
                     <td>1</td>
                     <td>华语歌手</td>
-                    <td><a href="#"><i class="glyphicon glyphicon-book"></i> 编辑</a></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>欧美歌手</td>
-                    <td><a href="#"><i class="glyphicon glyphicon-book"></i> 编辑</a></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>日韩歌手</td>
-                    <td><a href="#"><i class="glyphicon glyphicon-book"></i> 编辑</a></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>华语歌手</td>
-                    <td><a href="#"><i class="glyphicon glyphicon-book"></i> 编辑</a></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>欧美歌手</td>
-                    <td><a href="#"><i class="glyphicon glyphicon-book"></i> 编辑</a></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>日韩歌手</td>
-                    <td><a href="#"><i class="glyphicon glyphicon-book"></i> 编辑</a></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>华语歌手</td>
-                    <td><a href="#"><i class="glyphicon glyphicon-book"></i> 编辑</a></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>欧美歌手</td>
-                    <td><a href="#"><i class="glyphicon glyphicon-book"></i> 编辑</a></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>日韩歌手</td>
                     <td><a href="#"><i class="glyphicon glyphicon-book"></i> 编辑</a></td>
                 </tr>
             </tbody>
@@ -125,13 +104,9 @@
         </nav>
     </div>
 
-
-
-
-
     <script src="lib/js/jquery.min.js"></script>
     <script src="lib/js/bootstrap.min.js"></script>
-
+    <script src="js/singerCate.js"></script>
 </body>
 
 </html>
