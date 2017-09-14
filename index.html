@@ -8,6 +8,12 @@
     <link type="text/css" rel="stylesheet" href="lib/css/normalize.css">
     <link type="text/css" rel="stylesheet" href="lib/css/demo.css">
     <link type="text/css" rel="stylesheet" href="lib/css/component.css">
+
+    <style type="text/css">
+        a{
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 <div class="container demo-1">
@@ -17,15 +23,15 @@
             <div class="logo_box">
                 <h3>欢迎登录</h3>
                 <form action="#" name="f" method="post">
-                    <div class="input_outer">
+                    <div id="nameContent" class="input_outer">
                         <span class="u_user"></span>
-                        <input name="logname" class="text" style="color: #FFFFFF !important" type="text" placeholder="请输入账户">
+                        <input id="logName" class="text" style="color: #FFFFFF !important" type="text" placeholder="请输入账户" required>
                     </div>
-                    <div class="input_outer">
+                    <div id="passContent" class="input_outer">
                         <span class="us_uer"></span>
-                        <input name="logpass" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;" value="" type="password" placeholder="请输入密码">
+                        <input id="logPass" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;" value="" type="password" placeholder="请输入密码" required>
                     </div>
-                    <div class="mb2"><a class="act-but submit" href="javascript:;" style="color: #FFFFFF">登录</a></div>
+                    <div class="mb2"><a id="btnLog" class="act-but submit" style="color: #FFFFFF">登录</a></div>
                 </form>
             </div>
         </div>
@@ -35,6 +41,7 @@
 <script type="text/javascript" src="lib/js/EasePack.min.js"></script>
 <script type="text/javascript" src="lib/js/rAF.js"></script>
 <script type="text/javascript" src="lib/js/demo-1.js"></script>
-
+<script src="lib/js/jquery.min.js"></script>
+<script src="js/login.js"></script>
 </body>
 </html>

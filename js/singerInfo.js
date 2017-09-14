@@ -4,6 +4,10 @@
 $(function(e){
 
     //$('[data-toggle="popover"]').popover();
+    //$('#tbMain>tr:first').remove();
+
+    var objs = [];
+    var pageSize = 5;
 
     $('#btnAddSinger').bind('click' ,function(e){
         location.href = 'uploadSingerInfo.html';
@@ -14,17 +18,27 @@ $(function(e){
         data: '',
         method: 'get',
         success: function(data){
-            console.log(data);
-            var objs = data.Data;
-            for(var i = 0;i < objs.length; i++){
-                var tr = createSingerInfoItem(objs[i] ,i);
-                tr.appendTo('#tbMain');
-            }
+            objs = data.Data;
+            //console.log(data);
 
-            $('[data-toggle="popover"]').popover();
+
+            drawSingerInfo(0,pageSize);
+
+            createPageIndex();
         },
         dataType: 'json'
     });
+
+    function drawSingerInfo(startIndex ,endIndex){
+        //$('#tbMain')[0].innerHTML = '';
+        $('#tbMain>tr:not(:first)').remove();
+        for(var i = startIndex; i < endIndex; i++){
+            var tr = createSingerInfoItem(objs[i] ,i);
+            tr.appendTo('#tbMain');
+        }
+        $('#tbMain>tr:first').remove();
+        $('[data-toggle="popover"]').popover();
+    };
 
     function createSingerInfoItem(item ,i){
         var $temp = $('#tbMain>tr:first').clone();
@@ -45,6 +59,26 @@ $(function(e){
         return $temp;
     };
 
+    //´´½¨Ò³Âë
+    function createPageIndex(){
+        var pageIndex = Math.ceil(objs.length/pageSize);
+        $('#tFooter>span:last').text(pageIndex);
+        for(var i = 1; i <= pageIndex; i++){
+            var $li = $('<li><a href="#"></a></li>');
+            $li.find('a').text(i);
+            $li.appendTo('.pagination');
+            $li.bind('click' ,function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                $('#tFooter>span:first').text(e.target.innerText);
+                var self = e.target;
+                var startIndex = (self.innerText - 1) * pageSize;
+                var endIndex = (self.innerText * pageSize) < objs.length ? self.innerText * pageSize : objs.length;
+                //console.log(e.target.innerText);
+                drawSingerInfo(startIndex ,endIndex);
+            });
+        }
 
+    };
 
 });

@@ -48,7 +48,7 @@
     margin-bottom: 30px;
     border-radius: 50px;
     position: relative;
-    border: rgba(255,255,255,0.2) 2px solid !important;
+    border: rgba(255,255,255,0.2) 2px solid;
 }
 .u_user{
     width: 25px;
