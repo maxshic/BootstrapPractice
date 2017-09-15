@@ -4,6 +4,7 @@
 $(function(e){
     var $temp = $('#tbMain>tr:first').remove();
     var cateId = 0;
+    var lineNum = 0;
 
     $.ajax({
         url: 'http://192.168.9.100/htmlprojectwebapi/SongCategory/list',
@@ -29,7 +30,7 @@ $(function(e){
         $tr.find(':nth-child(2)').text(item.Name);
         $tr.find(':nth-child(3)').text(count);
 
-        $tr.find(':nth-child(4)>a').bind('click' , {id:item.Id,name:item.Name} ,function(e){
+        $tr.find(':nth-child(4)>a').bind('click' , {id:item.Id,name:item.Name,num:i+1} ,function(e){
             $('#cateEditName').val(e.data.name);
             cateId = e.data.id;
             /*$.ajax({
@@ -41,6 +42,7 @@ $(function(e){
                 },
                 dataType: 'json'
             });*/
+            lineNum = e.data.num;
             $('#dialogEdit').modal('show');
         });
 
@@ -74,7 +76,10 @@ $(function(e){
                 data: {id: cateId,name: $('#cateEditName').val()},
                 method: 'post',
                 success: function(data){
-                    console.log(data);
+                    //console.log(data);
+                    //console.log(lineNum);
+                    $('#tbMain>tr:nth-child('+ lineNum +')>td:nth-child(2)').text(data.Data.Name);
+                    $('#dialogEdit').modal('hide');
                 },
                 dataType: 'json'
             });
