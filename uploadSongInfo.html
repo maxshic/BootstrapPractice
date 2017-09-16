@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/global.css"/>
+    <style type="text/css">
+        .headerImg{
+            width: 150px;
+            height: 150px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            position: relative;
+            padding: 5px;
+        }
+        #songHeader{
+            position: absolute;
+            width: 138px;
+            height: 138px;
+            top: 5px;
+            bottom: 5px;
+            left: 5px;
+            right: 5px;
+            opacity: 0;
+            filter: alpha(opacity = 0);
+            cursor: pointer;
+            z-index: 333;
+        }
+        #songHeaderImg{
+            display: block;
+            position: absolute;
+            width: 138px;
+            height: 138px;
+            top: 5px;
+            bottom: 5px;
+            left: 5px;
+            right: 5px;
+            z-index: 222;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-header">
+        <h1>上传歌曲信息</h1>
+    </div>
+
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-2"></div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-8">
+
+        <form id="form">
+            <div class="center-block headerImg">
+                <img id="songHeaderImg" src="images/my.jpg" alt=""/>
+                <input id="songHeader" name="cover" type="file"/>
+            </div>
+
+            <div>
+                <label class="center-block" style="width: 138px;text-align: center;">点击选择封面</label>
+            </div>
+
+            <div class="form-group">
+                <label for="songName">歌曲名称</label>
+                <input class="form-control" id="songName" name="name" type="text"/>
+            </div>
+
+            <div class="form-group">
+                <label for="songCate">歌曲类别</label>
+                <select class="form-control" name="categoryId" id="songCate">
+
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="songSinger">所属歌手</label>
+                <select class="form-control" name="singerId" id="songSinger">
+
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>上传资源</label>
+                <input id="songSource" name="resource" type="file" style="display: none;"/>
+                <div class="input-group">
+                    <input class="form-control" id="txtSongSource" type="text" readonly/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" id="btnSongSource" type="button"><i class="glyphicon glyphicon-folder-open"></i>   选择文件</button>
+                    </span>
+                </div>
+            </div>
+
+            <audio id="audio" src=""></audio>
+
+            <div class="form-group">
+                <label>资源时长/s</label>
+                <input class="form-control" id="songDuration" name="duration" type="text" readonly/>
+            </div>
+
+            <div class="form-group">
+                <label>歌词(可选)</label>
+                <textarea class="form-control" name="word" id="songWord" rows="5"></textarea>
+            </div>
+
+            <div class="form-group">
+                <button id="btnUpload" class="btn btn-primary btn-block" type="button">上传歌手信息</button>
+            </div>
+
+        </form>
+
+
+    </div>
+
+    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-2"></div>
+
+
+    <script src="lib/js/jquery.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <script src="js/uploadSongInfo.js"></script>
+</body>
+</html>
