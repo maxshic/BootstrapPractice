@@ -51,11 +51,12 @@ $(function(e){
             data: '',
             method: 'get',
             success: function(data){
-                //console.log(data);
+                console.log(data);
                 songInfoObjs = data.Data;
                 /*for(var i = 0; i < songInfoObjs.length; i++){
                     createSongInfoItem(songInfoObjs[i] ,i).appendTo('#tbMain');
                 }*/
+                console.log(songInfoObjs);
                 createSongInfoList(songInfoObjs);
             },
             dataType: 'json'
@@ -80,7 +81,7 @@ $(function(e){
     function createSongInfoList(arr){
         $('#tbMain').html('');
         $('.pagination').html('');
-        if(arr.length != 0){
+        if(arr && arr.length != 0){
 
             var pageLength = Math.ceil(arr.length / pageSize);
             for(var i = 0; i < pageLength; i++){

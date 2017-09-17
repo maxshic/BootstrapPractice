@@ -83,6 +83,7 @@ $(function(e){
     $('#btnUpload').bind('click' ,function(e){
         var form = $('#form')[0];
         var formData = new FormData(form);
+        console.log(formData);
         $.ajax({
             url: 'http://192.168.9.100/htmlprojectwebapi/song/create',
             data: formData,
